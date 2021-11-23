@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Nacionalidade</title>
+    <style>
+        body{
+            background-color: rgb(99, 224, 99);
+        }
+        h1 {
+            color: rgb(216, 27, 121);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    País de nacimento: <input type="text" name ="txtvel" id ="txtvel">
+    <input type="button" value="Verificar" onclick="verifica()">
+    <div id = 'nac'>
+
+    </div>
+    <script>
+        function verifica(){
+            var txtv = window.document.querySelector('input#txtvel')
+            var nac = window.document.querySelector('div#nac')
+            var pais =(txtv.value)
+            nac.innerHTML = `Seu país é: ${pais}`
+            if (pais == "Brasil" || "BRASIL" || "brasil"){
+                nac.innerHTML += ('<p>Você é <strong>brasileiro!!</strong></p>')
+            } else {
+                 nac.innerHTML += ('<p>Você é <strong>estrangeiro!!</strong></p>')
+            }
+        }
+    </script>
+</body>
+</html>
